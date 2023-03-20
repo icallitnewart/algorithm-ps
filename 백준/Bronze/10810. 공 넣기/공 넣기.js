@@ -5,8 +5,7 @@ let balls = new Array(Number(N)).fill(0);
 rules.forEach((rule) => {
   const [i, j, k] = rule.map(n => Number(n));
   for (let n = 1; n <= N; n++) {
-    const inRange = (n >= i && n <= j);
-    if (inRange) balls[n - 1] = k;
+    if (n >= i && n <= j) balls[n - 1] = k;
   }
 });
 
