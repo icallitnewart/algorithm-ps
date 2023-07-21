@@ -1,8 +1,8 @@
 function solution(N, stages) {
     const rates = {};
     for(let level=1; level<=N; level++) {
-        const challenge = stages.filter(v=> v >= level).length;
-        const success = stages.filter(v=> v === level).length; 
+        const challenge = stages.filter(stage=> stage >= level).length;
+        const success = stages.filter(stage=> stage === level).length; 
         rates[level] = success / challenge;
     }
     
