@@ -6,7 +6,6 @@ function solution(n, words) {
         const lastWord = arr[arr.length - 1];
         
         if((arr.length > 0 && lastWord[lastWord.length - 1] !== word[0]) || arr.includes(word)) {
-            console.log(i)
             const person = (i + 1) % n === 0 ? n : (i + 1) % n;
             const turn = Math.ceil((i + 1) / n);
             return [person, turn];
