@@ -1,5 +1,4 @@
 function solution(board) {
-    const bombs = [];
     board.forEach((row, x)=> {
         row.forEach((col, y)=> {
             if(col===1) {
