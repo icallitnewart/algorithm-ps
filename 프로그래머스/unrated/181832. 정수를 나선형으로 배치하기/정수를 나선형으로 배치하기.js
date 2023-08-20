@@ -19,7 +19,7 @@ function solution(n) {
             y += dy[dir];
             
         } else { // 다음 칸이 배열 범위 밖이거나 이미 채워진 경우
-            // x, y 값을 다시 배열 범위 안으로 넣어준다
+            // x, y 값을 다시 원래 위치로 돌려놓는다
             x -= dx[dir];
             y -= dy[dir];
             
