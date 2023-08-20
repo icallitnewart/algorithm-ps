@@ -2,7 +2,6 @@ function solution(n) {
     const arr = Array.from({length: n}, (_, i)=> Array(n).fill(0));
     let num = 1;
     let cycle = 0;
-    let x = 0, y = 0;
     
     while(num <= n * n) {
         //left to right
