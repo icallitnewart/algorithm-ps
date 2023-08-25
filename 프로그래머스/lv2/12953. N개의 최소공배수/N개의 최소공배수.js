@@ -5,7 +5,7 @@ function solution(arr) {
         let small = Math.min(a, b);
         
         while(small > 0) {
-            let rest = big % small;
+            const rest = big % small;
             big = small;
             small = rest;
         }
