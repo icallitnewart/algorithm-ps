@@ -5,7 +5,7 @@ function solution(progresses, speeds) {
     for(let i=0; i<progresses.length; i++) {
         const duration = Math.ceil((100 - progresses[i]) / speeds[i]);
         if(days[days.length - 1] >= duration) {
-            answer[answer.length - 1] = (answer[answer.length - 1] || 0) + 1;
+            answer[answer.length - 1] += 1;
         } else {
             days.push(duration);
             answer.push(1);
