@@ -1,6 +1,7 @@
 function solution(rank, attendance) {
-    const students = rank.map((r, i)=> ({[i]: r}));    
-    const filtered = students.filter((_, i)=> attendance[i]);
-    const [a, b, c] = filtered.sort((a, b)=> Object.values(a) - Object.values(b)).slice(0, 3).map(v=> Number(Object.keys(v)));
+    const [a, b, c] = rank
+                        .map((r, i)=> ([r, i]))
+                        .filter((_, i)=> attendance[i])
+                        .sort(([a], [b])=> a - b).map(v=> v[1]);
     return 10000 * a + 100 * b + c;
 }
