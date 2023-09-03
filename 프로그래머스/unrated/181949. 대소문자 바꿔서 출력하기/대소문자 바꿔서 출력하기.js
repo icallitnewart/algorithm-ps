@@ -7,11 +7,12 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on('line', function (line) {
-    const letters = line.split('');
+    input = [line];
+}).on('close',function(){
+    str = input[0]; 
+    const letters = str.split('');
     const isUpperCase = (v)=> v === v.toUpperCase();
     const transformed = letters.map(v=> isUpperCase(v) ? v.toLowerCase() : v.toUpperCase());
-    
+
     console.log(transformed.join(''));
-}).on('close',function(){
-    str = input[0];
 });
