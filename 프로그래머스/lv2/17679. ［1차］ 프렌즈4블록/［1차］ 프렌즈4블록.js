@@ -3,7 +3,7 @@ function solution(m, n, board) {
     let answer = 0;
     
     while(true) {
-        //블락 삭제
+        //삭제할 블록 찾기
         const removeBlocks = new Set();
         for(let i=0; i<board.length-1; i++) {
             const column = board[i];
@@ -12,11 +12,7 @@ function solution(m, n, board) {
             for(let j=0; j<column.length-1; j++) {
                 const target = column[j];
 
-                if(target !== '0' && 
-                   target === column[j+1] && 
-                   target === nextColumn[j] && 
-                   target === nextColumn[j+1]
-                  ) {
+                if(target !== '0' && target === column[j+1] && target === nextColumn[j] && target === nextColumn[j+1]) {
                     removeBlocks.add(`${i},${j}`);
                     removeBlocks.add(`${i},${j+1}`);
                     removeBlocks.add(`${i+1},${j}`);
@@ -28,6 +24,7 @@ function solution(m, n, board) {
         //더 이상 삭제할 블록이 없다면 answer를 리턴
         if(removeBlocks.size === 0) return answer;
         
+        //블록 삭제
         removeBlocks.forEach(pos => {
             const [x, y] = pos.split(",").map(Number);
             board[x][y] = '0';
@@ -35,7 +32,7 @@ function solution(m, n, board) {
         });
         
 
-        //블락 재정렬
+        //블록 재정렬
         for(let i=board.length-1; i>=0; i--) {
             const column = board[i];
 
