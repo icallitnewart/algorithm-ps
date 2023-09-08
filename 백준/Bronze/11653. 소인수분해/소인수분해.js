@@ -3,16 +3,11 @@ let num = parseInt(input);
 
 if (num === 1) return;
 
-while (true) {
-  const divisors = [];
-
-  for (let i = 2; i <= num / 2; i++) {
-    if (num % i === 0) divisors.push(i);
-  }
-
-  if (!divisors.length) return console.log(num);
-  else {
-    num /= divisors[0];
-    console.log(divisors[0]);
+for (let i = 2; i * i <= num; i++) {
+  while (num % i === 0) {
+    console.log(i);
+    num /= i;
   }
 }
+
+if (num > 1) console.log(num);
