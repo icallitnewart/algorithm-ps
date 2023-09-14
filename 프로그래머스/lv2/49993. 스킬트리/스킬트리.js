@@ -1,16 +1,15 @@
 function solution(skill, skill_trees) {
     let answer = 0;
-    const order = skill.split('');
     
     for(const tree of skill_trees) {
         const skills = tree.split('');
-        const arr = [...order];
+        const order = skill.split('');
         
         for(let i=0; i<skills.length; i++) {
             const sk = skills[i];
             
-            if(order.includes(sk)) {
-                if(arr[0] === sk) arr.shift();
+            if(skill.includes(sk)) {
+                if(order[0] === sk) order.shift();
                 else break;
             }
             
