@@ -19,9 +19,10 @@ function solution(numbers) {
         //함수 종료 조건
         if(!rests.length) return;
         
-        //선택된 숫자(n)을 기점으로 두 부분으로 나눈다
         rests.forEach((n, i)=> {
+            //선택된 숫자 n을 제외한 나머지
             const rest = [...rests.slice(0, i), ...rests.slice(i+1)];
+            //지금까지 선택된 숫자 n들 + 새로 선택된 숫자 n
             getPermutation([...permutation, n], rest);
         });
     };
